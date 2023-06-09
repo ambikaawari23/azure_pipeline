@@ -6,7 +6,7 @@ on:
       working_dir:
         description: 'Path of working directory' 
         required: true
-        default: .
+        default: ./
 
         
 
@@ -64,5 +64,5 @@ jobs:
       
  #terraform apply
    
-#     - run: terraform apply -auto-approve
-#       working-directory: ${{ inputs.working_dir }}
+    - run: terraform apply -auto-approve
+      working-directory: ${{ inputs.working_dir }}
