@@ -12,8 +12,9 @@ provider "azurerm" {
 
 }
 
-module "resource_group"{
-  source ="git::https://github.com/ambikaawari23/resource_group.git"
+resource "azurerm_resource_group" "rg" {
+  name     = "aa-resouce_name"
+  location = "West Europe"
 }
 
 module "storage_account" {
