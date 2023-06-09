@@ -1,9 +1,17 @@
-terraform {
+erraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "=3.18.0"
     }
+  }
+
+  backend "azurerm" {
+    resource_group_name = "storage001"
+    storage_account_name = "stg22111"
+    container_name       = "stss"
+    key                  = "azure_terraform.tfstate"
+    
   }
 }
 
