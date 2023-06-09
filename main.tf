@@ -28,6 +28,7 @@ resource "azurerm_resource_group" "rg" {
 module "storage_account" { 
   source = "github.com/ambikaawari23/storage_account//storage_account"
   resource_group_name = azurerm_resource_group.rg.name
+  location = azurerm_resource_group.rg.location
 }
 
 # module "key_vault" {
