@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "rg" {
 }
 
 module "storage_account" {
- path ="./storage_account"
+  source ="./storage_account"
   url = "git@github.com/ambikaawari23/storage_account.git"
   resource_group_name = azurerm_resource_group.rg.name
 }
