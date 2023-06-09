@@ -18,21 +18,21 @@ resource "azurerm_resource_group" "rg" {
 }
 
 module "storage_account" {
-  source ="git::https://github.com/ambikaawari23/storage_account.git" 
+  source ="git::git@github.com/ambikaawari23/storage_account.git" 
 }
 
-module "key_vault" {
-  source = "git::https://github.com/ambikaawari23/key_vault.git"  
-}
+# module "key_vault" {
+#   source = "git::https://github.com/ambikaawari23/key_vault.git"  
+# }
 
-module "app_insight" {
-  source = "git::https://github.com/ambikaawari23/app_insight.git"  
-}
+# module "app_insight" {
+#   source = "git::https://github.com/ambikaawari23/app_insight.git"  
+# }
 
-module "app_service" {
-  source = "git::https://github.com/ambikaawari23/app_service.git" 
-}
+# module "app_service" {
+#   source = "git::https://github.com/ambikaawari23/app_service.git" 
+# }
 
-module "web_app" {
-  source = "git::https://github.com/ambikaawari23/web_app.git"
+# module "web_app" {
+#   source = "git::https://github.com/ambikaawari23/web_app.git"
 }
