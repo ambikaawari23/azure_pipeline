@@ -12,32 +12,26 @@ provider "azurerm" {
 
 }
 
-resource "azurerm_resource_group" "rg" {
-  name     = "aa_resource_group_23"
-  location = "West Europe"
+module "resource_group"{
+  source ="git::https://github.com/ambikaawari23/resource_group.git"
 }
 
 module "storage_account" {
-  source ="git::https://github.com/ambikaawari23/storage_account.git"
-  #resource_group_name = azurerm_resource_group.rg.name
+  source ="git::https://github.com/ambikaawari23/storage_account.git" 
 }
 
 module "key_vault" {
-  source = "git::https://github.com/ambikaawari23/key_vault.git"
-  resource_group_name = azurerm_resource_group.rg.name
+  source = "git::https://github.com/ambikaawari23/key_vault.git"  
 }
 
 module "app_insight" {
-  source = "git::https://github.com/ambikaawari23/app_insight.git"
-  resource_group_name = azurerm_resource_group.rg.name
+  source = "git::https://github.com/ambikaawari23/app_insight.git"  
 }
 
 module "app_service" {
-  source = "git::https://github.com/ambikaawari23/app_service.git"
-  resource_group_name = azurerm_resource_group.rg.name
+  source = "git::https://github.com/ambikaawari23/app_service.git" 
 }
 
 module "web_app" {
   source = "git::https://github.com/ambikaawari23/web_app.git"
-  resource_group_name = azurerm_resource_group.rg.name
 }
