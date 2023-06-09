@@ -25,10 +25,9 @@ resource "azurerm_resource_group" "rg" {
   location = "West Europe"
 }
 
-module "storage_account" {
-  #source ="git::git@github.com/ambikaawari23/storage_account.git" 
+module "storage_account" { 
   source = "github.com/ambikaawari23/storage_account///storage_account"
-  #resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = azurerm_resource_group.rg.name
 }
 
 # module "key_vault" {
