@@ -13,7 +13,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "aa_rg_23_${var.location}"
+  name     = "aa_resource_group_23${var.location}"
   location = "West Europe"
 }
 
