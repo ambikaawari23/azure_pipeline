@@ -31,18 +31,26 @@ module "storage_account" {
   location = azurerm_resource_group.rg.location
 }
 
-# module "key_vault" {
-#   source = "git::https://github.com/ambikaawari23/key_vault.git"  
-# }
+module "key_vault" {
+  source = "github.com/ambikaawari23/key_vault//key_vault" 
+  resource_group_name = azurerm_resource_group.rg.name
+  location = azurerm_resource_group.rg.location
+}
 
-# module "app_insight" {
-#   source = "git::https://github.com/ambikaawari23/app_insight.git"  
-# }
+module "app_insight" {
+  source = "github.com/ambikaawari23/app_insight//app_insight" 
+  resource_group_name = azurerm_resource_group.rg.name
+  location = azurerm_resource_group.rg.location
+}
 
-# module "app_service" {
-#   source = "git::https://github.com/ambikaawari23/app_service.git" 
-# }
+module "app_service" {
+  source = "github.com/ambikaawari23/app_service//app_service"
+  resource_group_name = azurerm_resource_group.rg.name
+  location = azurerm_resource_group.rg.location
+}
 
-# module "web_app" {
-#   source = "git::https://github.com/ambikaawari23/web_app.git"
-#}
+module "web_app" {
+  source = "github.com/ambikaawari23/web_app//web_app"
+  resource_group_name = azurerm_resource_group.rg.name
+  location = azurerm_resource_group.rg.location
+}
